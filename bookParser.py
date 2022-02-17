@@ -3,6 +3,9 @@
 class bookParser:
 
     def __init__(self):
+        #document refers to the html page that is passed from Web.py
+        self.document = ""
+        #bookList will hold 5 book
         self.bookList = []
 
     def initList(self):
