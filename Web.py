@@ -1,5 +1,4 @@
 from googlesearch import search
-import urllib.request
 from time import sleep
 from bs4 import BeautifulSoup
 import requests
@@ -14,20 +13,20 @@ class Web:
     def topSearches(self):
         query = self.keyword
         for j in search(query, tld="co.in", stop=1):
-
             self.result.append(j)
 
     def url(self):
         self.topSearches()
         for i in range(len(self.result)):
             try:
-                webUrls = urllib.request.urlopen(str(self.result[i])).read()
+                webUrls = requests.get(self.result[i]).text
                 Soup = BeautifulSoup(webUrls, 'lxml')
-                print(Soup.prettify())
-            except:
-                print(self.result[i])
+                print(self.result[i] + "\n")
+                return(Soup)
+
+            except Exception as e:
+                print(e)
         
-    
 if __name__ == "__main__":
     web = Web("books")
     web.url()
