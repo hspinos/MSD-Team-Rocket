@@ -3,6 +3,12 @@ from time import sleep
 from bs4 import BeautifulSoup
 import requests
 
+'''
+pip install google
+pip install beautifulsoup4
+pip install requests
+'''
+
 class Web:
 
     def __init__(self, keyword):
