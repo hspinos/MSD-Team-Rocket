@@ -35,5 +35,5 @@ class Web:
         
 if __name__ == "__main__":
     web = Web("books")
-    web.url()
+    print(web.url().title.text)
 

@@ -1,20 +1,33 @@
 
+from bs4 import BeautifulSoup
 
 class bookParser:
 
-    def __init__(self):
-        #document refers to the html page that is passed from Web.py
-        self.document = ""
-        #bookList will hold 5 book
+    def __init__(self, Soup):
+        #soup object being passed in from web scraper
+        self.soup = Soup
+        #the broken down soup objects
+        self.soupList = []
+        #bookList will hold 5 books
         self.bookList = []
 
-    def initList(self):
-        for i in range(4):
-            self.bookList[i] = initBook(i)
+    def reduceSoup(self):
+        #for i in range (1, 1):
+            bookIdTag = "splide01-splide01" #+ i
+            
+            #debug print
+            print(bookIdTag)
+            #debug print
 
-    def initBook(self, index):
+            self.soupList.append(self.soup.find(id=bookIdTag))
+
+    def initList(self):
+        #for i in range(1, 1):
+            self.bookList.append(self.initBook(self.soupList[0]))
+
+    def initBook(self, soupItem):
         book = Book()
-        book.parseBook(index)
+        book.parseBook(soupItem)
 
         return book
 
@@ -26,11 +39,14 @@ class Book:
         self.author = ""
         self.price = ""
 
-    def parseBook(self, index):
-        parsedTitle = #parse title from returned web page
-        parsedAuthor = #parse author from returned web page
-        parsedPrice = #parse price from returned web page
+    def parseBook(self, soupItem):
+        #authorMarker = soupItem.find_next(class_="item-title")
+        parsedTitle = soupItem.find_next(class_="item-title").text
+        #parsedAuthor = authorMarker.next_element().text
+        parsedPrice = soupItem.find_next(class_="item-price").text
 
         self.title = parsedTitle
         self.author = parsedAuthor
         self.price = parsedPrice
+        
+
