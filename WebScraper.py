@@ -1,5 +1,3 @@
-#from googlesearch import search
-from time import sleep
 from bs4 import BeautifulSoup
 import requests
 

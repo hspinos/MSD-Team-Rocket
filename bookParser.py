@@ -1,29 +1,19 @@
 
-from bs4 import BeautifulSoup
-
 class bookParser:
 
     def __init__(self, Soup):
-        #soup object being passed in from web scraper
         self.soup = Soup
-        #the broken down soup objects
         self.soupList = []
-        #bookList will hold 5 books
         self.bookList = []
 
     def reduceSoup(self):
-        #for i in range (1, 1):
-            bookIdTag = "splide01-splide01" #+ i
-            
-            #debug print
-            print(bookIdTag)
-            #debug print
-
-            self.soupList.append(self.soup.find(id=bookIdTag))
+        self.soupList = self.soup.find_all(class_="product-image-text", limit=5)
 
     def initList(self):
-        #for i in range(1, 1):
-            self.bookList.append(self.initBook(self.soupList[0]))
+        for i in range(0, 5):
+            self.bookList.append(
+                self.initBook(self.soupList[i])
+            )
 
     def initBook(self, soupItem):
         book = Book()
@@ -40,9 +30,9 @@ class Book:
         self.price = ""
 
     def parseBook(self, soupItem):
-        #authorMarker = soupItem.find_next(class_="item-title")
+        authorMarker = soupItem.find(class_="item-title")
         parsedTitle = soupItem.find_next(class_="item-title").text
-        #parsedAuthor = authorMarker.next_element().text
+        parsedAuthor = authorMarker.find_next(style="font-size: 11px;").text
         parsedPrice = soupItem.find_next(class_="item-price").text
 
         self.title = parsedTitle
