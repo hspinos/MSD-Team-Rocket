@@ -30,13 +30,13 @@ class Book:
         self.price = ""
 
     def parseBook(self, soupItem):
-        authorMarker = soupItem.find(class_="item-title")
+        #authorMarker = soupItem.find(class_="item-title")
         parsedTitle = soupItem.find_next(class_="item-title").text
-        parsedAuthor = authorMarker.find_next(style="font-size: 11px;").text
+        #parsedAuthor = authorMarker.find_next(style="font-size: 11px;").text
         parsedPrice = soupItem.find_next(class_="item-price").text
 
         self.title = parsedTitle
-        self.author = parsedAuthor
+        #self.author = parsedAuthor
         self.price = parsedPrice
         
 
