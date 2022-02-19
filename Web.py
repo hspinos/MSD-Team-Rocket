@@ -1,5 +1,6 @@
 from googlesearch import search
 from time import sleep
+import urllib.request
 from bs4 import BeautifulSoup
 import requests
 
@@ -35,5 +36,5 @@ class Web:
         
 if __name__ == "__main__":
     web = Web("books")
-    web.url()
+    print(str(web.url().title.text))
 
