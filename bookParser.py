@@ -1,20 +1,23 @@
 
-
 class bookParser:
 
-    def __init__(self):
-        #document refers to the html page that is passed from Web.py
-        self.document = ""
-        #bookList will hold 5 book
+    def __init__(self, Soup):
+        self.soup = Soup
+        self.soupList = []
         self.bookList = []
 
-    def initList(self):
-        for i in range(4):
-            self.bookList[i] = initBook(i)
+    def reduceSoup(self):
+        self.soupList = self.soup.find_all(class_="product-image-text", limit=5)
 
-    def initBook(self, index):
+    def initList(self):
+        for i in range(0, 5):
+            self.bookList.append(
+                self.initBook(self.soupList[i])
+            )
+
+    def initBook(self, soupItem):
         book = Book()
-        book.parseBook(index)
+        book.parseBook(soupItem)
 
         return book
 
@@ -26,11 +29,14 @@ class Book:
         self.author = ""
         self.price = ""
 
-    def parseBook(self, index):
-        parsedTitle = #parse title from returned web page
-        parsedAuthor = #parse author from returned web page
-        parsedPrice = #parse price from returned web page
+    def parseBook(self, soupItem):
+        authorMarker = soupItem.find(class_="item-title")
+        parsedTitle = soupItem.find_next(class_="item-title").text
+        parsedAuthor = authorMarker.find_next(style="font-size: 11px;").text
+        parsedPrice = soupItem.find_next(class_="item-price").text
 
         self.title = parsedTitle
         self.author = parsedAuthor
         self.price = parsedPrice
+        
+
