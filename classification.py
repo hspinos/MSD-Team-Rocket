@@ -34,8 +34,8 @@ class keyword:
 
     def compareInput(self):
 
-        for syn in sad:
-            if self.feeling in syn:
+        for i in sad:
+            if self.feeling in i:
                 print("a")
         for i in happy:
             if self.feeling in i:
@@ -43,17 +43,23 @@ class keyword:
         for i in fear:
             if self.feeling in i:
                 print("c")
-        for k in disgust:
-            if str(k) in str(self.feeling):
+        for i in disgust:
+            if self.feeling in i:
                 print("d")
-        for k in anger:
-            if str(k) in str(self.feeling):
+        for i in anger:
+            if self.feeling in i:
                 print("e")
-        for k in surprise:
-            if str(k) in str(self.feeling):
+        for i in surprise:
+            if self.feeling in i:
                 print("f")
 
 answer = input("how are you feeling")
 k = keyword(answer)
 k.compareInput()
+print(sad)
 print(happy)
+print(fear)
+print(disgust)
+print(anger)
+print(surprise)
+
