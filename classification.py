@@ -27,31 +27,20 @@ anger += synonyms("anger")
 surprise = ["surprise"]
 surprise += synonyms("surprise")
 
+emotions = [sad, happy, fear, disgust, anger, surprise]
+
 
 class keyword:
+
     def __init__(self, feeling):
         self.feeling = feeling
 
     def compareInput(self):
+        for i in emotions:
+            for n in i:
+                if self.feeling in n:
+                    print("found " + n)
 
-        for i in sad:
-            if self.feeling in i:
-                print("a")
-        for i in happy:
-            if self.feeling in i:
-                print("b")
-        for i in fear:
-            if self.feeling in i:
-                print("c")
-        for i in disgust:
-            if self.feeling in i:
-                print("d")
-        for i in anger:
-            if self.feeling in i:
-                print("e")
-        for i in surprise:
-            if self.feeling in i:
-                print("f")
 
 answer = input("how are you feeling")
 k = keyword(answer)
