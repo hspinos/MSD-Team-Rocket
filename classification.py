@@ -40,15 +40,10 @@ class keyword:
             for n in i:
                 if self.feeling in n:
                     print("found " + n)
+                    return str(n)
 
 
 answer = input("how are you feeling")
 k = keyword(answer)
 k.compareInput()
-print(sad)
-print(happy)
-print(fear)
-print(disgust)
-print(anger)
-print(surprise)
 
