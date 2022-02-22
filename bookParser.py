@@ -1,4 +1,5 @@
 
+
 class bookParser:
 
     def __init__(self, Soup):
@@ -25,9 +26,9 @@ class bookParser:
 class Book:
 
     def __init__(self):
-        self.title = ""
-        self.author = ""
-        self.price = ""
+        self.title = "Title: "
+        self.author = "Author: "
+        self.price = "Price: "
 
     def parseBook(self, soupItem):
         #authorMarker = soupItem.find(class_="item-title")
@@ -35,8 +36,8 @@ class Book:
         #parsedAuthor = authorMarker.find_next(style="font-size: 11px;").text
         parsedPrice = soupItem.find_next(class_="item-price").text
 
-        self.title = parsedTitle
+        self.title += parsedTitle
         #self.author = parsedAuthor
-        self.price = parsedPrice
+        self.price += parsedPrice
         
 
