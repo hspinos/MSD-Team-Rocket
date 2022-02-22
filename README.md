@@ -15,3 +15,8 @@ movies and tv shows. If a user suggest they are
 depressed the system would essentially provide them
 with a media recommendation to cheer them up. 
 
+Recommendations will configure of the title, author, and 
+price for the book. The book suggestions will come from
+Books a Million. The book suggestions will be sorted by 
+genera types.
+
