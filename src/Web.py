@@ -17,7 +17,8 @@ class Web:
         self.listForBooks = {"Adventurous" : "https://www.booksamillion.com/summer-reading2?oxid=1162&oxname=summereadinglist&oxpage=summeradventure&oxpos=module2&oxdate=050621",
                              "Happy" : "https://www.booksamillion.com/search?filter=book_categories%3ASEL-016-000%7Cdate%3Apast_90%7Cavailable_in_stores%3Atrue",
                              "Sad" : "https://www.booksamillion.com/search?filter=book_categories%3ASEL-011-000%7Cavailable_in_stores%3Atrue",
-                             "Love" : "https://www.booksamillion.com/romance5?oxid=1487&oxname=favromance&oxpage=romance&oxpos=module5&oxdate=012920"}
+                             "Love" : "https://www.booksamillion.com/romance5?oxid=1487&oxname=favromance&oxpage=romance&oxpos=module5&oxdate=012920",
+                             "Sci-Fi" : "https://www.booksamillion.com/scifi"}
 
     def bookUrl(self):
         try:
