@@ -1,6 +1,7 @@
-from src.bookParser import *
+from Web import *
+from bookParser import *
 
-webScraper = Web("Sci-Fi")
+webScraper = Web("Love")
 parser = bookParser(webScraper.bookUrl())
 parser.reduceSoup()
 parser.initList()
