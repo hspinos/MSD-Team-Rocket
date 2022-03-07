@@ -1,4 +1,6 @@
 # MSD-Team-Rocket
+![Tests](https://github.com/hspinos/MSD-Team-Rocket/actions/workflows/tests.yml/badge.svg)
+
 GitHub Remote Repository for Modern Software Development 
 
 We took Eliza one step further, by providing the user 
