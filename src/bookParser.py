@@ -1,9 +1,12 @@
+from turtle import title
 from Web import *
+from prettytable import PrettyTable
 
 class bookParser:
 
     def __init__(self, Soup):
         self.soup = Soup
+        self.table = PrettyTable(["Title", "Author", "Price"])
         self.soupList = []
         self.bookList = []
 
@@ -17,27 +20,31 @@ class bookParser:
             )
 
     def initBook(self, soupItem):
-        book = Book()
-        book.parseBook(soupItem)
-
+        book = Book(soupItem)
         return book
+
+    def printBook(self):
+        for i in self.bookList:
+            if("$" in i.author):
+                i.author = i.author.split("$")[0]
+                self.table.add_row([i.title, i.author, i.price])
+            else:
+                self.table.add_row([i.title, i.author, i.price])
+        print(self.table)
+
 
 
 class Book:
 
-    def __init__(self):
-        self.title = "Title: "
-        self.author = "Author: "
-        self.price = "Price: "
+    def __init__(self, soupItem):
+        self.title = soupItem.find_next(class_="item-title").text
 
-    def parseBook(self, soupItem):
-        #authorMarker = soupItem.find(class_="item-title")
-        parsedTitle = soupItem.find_next(class_="item-title").text
-        #parsedAuthor = authorMarker.find_next(style="font-size: 11px;").text
-        parsedPrice = soupItem.find_next(class_="item-price").text
+        try:
+            self.author = soupItem.find_next(style="font-size: 11px;").text
+        except:
+            self.author = soupItem.find_next(style="min-width: 110px").text
 
-        self.title += parsedTitle
-        #self.author = parsedAuthor
-        self.price += parsedPrice
-        
+                
+        self.price = soupItem.find_next(class_="item-price").text
+
 
