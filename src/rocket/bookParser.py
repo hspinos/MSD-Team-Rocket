@@ -1,5 +1,3 @@
-from turtle import title
-from Web import *
 from prettytable import PrettyTable
 
 
