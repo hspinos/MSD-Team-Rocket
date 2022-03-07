@@ -1,4 +1,4 @@
-from Web import *
+
 
 class bookParser:
 
