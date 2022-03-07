@@ -1,5 +1,3 @@
-from Web import Web
-from nltk.corpus import wordnet
 import requests
 from bs4 import BeautifulSoup
 

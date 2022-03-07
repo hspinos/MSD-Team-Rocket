@@ -1,5 +1,5 @@
-from Web import *
-from bookParser import *
+from src.rocket.Web import *
+from src.rocket.bookParser import *
 
 webScraper = Web("Love")
 parser = bookParser(webScraper.bookUrl())

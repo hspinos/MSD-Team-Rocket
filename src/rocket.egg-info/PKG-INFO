@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: rocket
+Version: 0.0.0
+Summary: project for parsing web pages
+Author: MSD-Team-Rocket
+License: UNKNOWN
+Platform: unix
+Platform: linux
+Platform: osx
+Platform: cygwin
+Platform: win32
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.10.2
+Requires-Python: >=2.7
+Provides-Extra: testing
+
+UNKNOWN
+

@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/rocket.egg-info/PKG-INFO
+src/rocket.egg-info/SOURCES.txt
+src/rocket.egg-info/dependency_links.txt
+src/rocket.egg-info/not-zip-safe
+src/rocket.egg-info/requires.txt
+src/rocket.egg-info/top_level.txt
+test/test_BookParser.py
+test/test_Classification.py
+test/test_IMDBParser.py
+test/test_Web.py
