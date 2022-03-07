@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 from turtle import title
 from Web import *
 from prettytable import PrettyTable
-=======
 
->>>>>>> 274f5acbfc64a0110d5ff5f5dd85f613d5d3ce0f
 
 class bookParser:
 
