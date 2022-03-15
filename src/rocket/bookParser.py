@@ -1,4 +1,3 @@
-from Web import *
 from prettytable import PrettyTable
 
 class bookParser:
