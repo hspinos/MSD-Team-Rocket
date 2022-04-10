@@ -40,8 +40,5 @@ class Web:
 
         except Exception as e:
             print(e)
-        
-if __name__ == "__main__":
-    web = Web("Sad")
-    web.bookUrl()
+
 
