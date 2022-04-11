@@ -43,6 +43,6 @@ class keyword:
                     return str(n)
 
 
-answer = input("how are you feeling")
+answer = input("how are you feeling ")
 k = keyword(answer)
-k.compareInput()
+print(k.compareInput())
