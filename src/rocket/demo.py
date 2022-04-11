@@ -1,6 +1,6 @@
-from sqlalchemy import table
 from Web import *
 from bookParser import *
+from eliza.eliza import *
 '''  
       |         _________    _______       ________      _____ ______           ________      ________      ________      ___  __        _______       _________ 
      / \       |\___   ___\ |\  ___ \     |\   __  \    |\   _ \  _   \        |\   __  \    |\   __  \    |\   ____\    |\  \|\  \     |\  ___ \     |\___   ___\
@@ -14,8 +14,10 @@ from bookParser import *
 
 '''
 
+logging.basicConfig()
 webScraper = Web("Sad")
 parser = bookParser(webScraper.bookUrl())
 parser.reduceSoup()
 parser.initList()
-parser.printBook()
+main_ = Main(parser.printBook())
+
