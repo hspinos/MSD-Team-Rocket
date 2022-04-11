@@ -1,0 +1,2 @@
+This directory is for storing all of the gui related files. This gui.txt file can be safely deleted.
+Any data needed to be sent to or from the gui can be done so using imports from the rocket package.
