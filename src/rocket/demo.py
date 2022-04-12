@@ -1,5 +1,4 @@
-from sqlalchemy import table
-from Web import *
+from Web
 from bookParser import *
 '''  
       |         _________    _______       ________      _____ ______           ________      ________      ________      ___  __        _______       _________ 
