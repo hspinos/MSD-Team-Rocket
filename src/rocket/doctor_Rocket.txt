@@ -33,6 +33,7 @@ synon: family mother mom father dad sister brother wife children child
 synon: desire want need
 synon: sad unhappy depressed sick
 synon: happy elated glad better
+synon: adventurous bold venturesome daredevil
 synon: cannot can't
 synon: everyone everybody nobody noone
 synon: be am is are was
@@ -149,6 +150,8 @@ key: i
     reasmb: I am sorry to hear that you are (3) . Can I provide some material to help you with your sadness?
   decomp: * i am * @happy *
     reasmb: It's great that you are feeling (3) ? Can I provide some material to make you feel even better?
+  decomp: * i am * @adventurous *
+    reasmb: I see your looking for an adventure. Can I provide some material to help you with your adventure?
   decomp: * i was *
     reasmb: goto was
   decomp: * i @belief * i *

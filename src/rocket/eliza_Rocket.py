@@ -7,6 +7,7 @@ import os
 from urllib import response
 from Web import *
 from bookParser import *
+from video import *
 
 # Fix Python2/Python3 incompatibility
 try: input = input
@@ -221,17 +222,23 @@ class Eliza:
     def run(self):
         print(self.initial())
         add_info = []
-        count = 0
 
         while True:
             sent = input('> ')
 
-            if count == 0:
-                add_info.append(sent.split()[1])
+            if "sad" in sent:
+                add_info.append("sad")
 
-            count+=1
+            if "adventurous" in sent:
+                add_info.append("adventurous")
 
             if sent == "books":
+                add_info.append(sent)
+
+            if sent == "videos":
+                add_info.append(sent)
+
+            if sent == "movies":
                 add_info.append(sent)
                     
             output = self.respond(sent)
@@ -241,13 +248,21 @@ class Eliza:
 
             print(output)
 
-        webScraper = Web(add_info[0])
-        parser = bookParser(webScraper.bookUrl())
-        parser.reduceSoup()
-        parser.initList()
+        if (add_info[1] == "books"):
+            webScraper = Web(add_info[0])
+            parser = bookParser(webScraper.bookUrl())
+            parser.reduceSoup()
+            parser.initList()
         
-        if(self.final() == "{--replace--}"):
-            print(parser.printBook())
+            if(self.final() == "{--replace--}"):
+                print(parser.printBook())
+        
+        if(add_info[1] == "videos"):
+                vid = video(add_info[0])
+                vid.videoDisplay()
+
+                if(self.final() == "{--replace--}"):
+                    print(parser.printBook())
 
 class Main:
     def __init__(self):
