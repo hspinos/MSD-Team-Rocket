@@ -1,9 +1,10 @@
-
+from prettytable import PrettyTable
 
 class imdbParser:
 
     def __init__(self, Soup):
         self.soup = Soup
+        self.table = PrettyTable(["Title", "Rating", "Description"])
         self.soupList = []
         self.imdbList = []
 
@@ -22,24 +23,29 @@ class imdbParser:
 
         return imdbItem
 
+    def printIMDBItem(self):
+        for i in self.imdbList:
+            self.table.add_row([i.title, i.rating, i.description])
+        print(self.table)
+
 class IMDBItem:
 
     def __init__(self):
         self.title = "Title: "
         self.rating = "Rating: "
         self.description = "Description: "
-        self.star = "Star: "
+        #self.star = "Star: "
 
 
     #TODO finish parsing logic
     def parseIMDB(self, soupItem):
-        parsedTitle = soupItem.find_next()
-        parsedRating = soupItem.find_next()
-        parsedDescription = soupItem.find_next()
-        parsedStar = soupItem.find_next()
+        parsedTitle = soupItem.find_next("a").text
+        parsedRating = soupItem.find_next("strong").text
+        parsedDescription = soupItem.find_all("p", "text-muted", limit=2)
+        #parsedStar = soupItem.find_next()
 
         self.title = parsedTitle
         self.rating = parsedRating
-        self.description = parsedDescription
-        self.star = parsedStar
+        self.description = parsedDescription[1].text
+        #self.star = parsedStar
 
