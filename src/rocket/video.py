@@ -1,6 +1,5 @@
 from youtubesearchpython import *
 import vlc
-from pynput import keyboard
 import random
 import pafy
 import time

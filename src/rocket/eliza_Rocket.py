@@ -7,6 +7,7 @@ import os
 from urllib import response
 from Web import *
 from bookParser import *
+from imdbParser import *
 from video import *
 
 # Fix Python2/Python3 incompatibility
@@ -263,6 +264,15 @@ class Eliza:
 
                 if(self.final() == "{--replace--}"):
                     print(parser.printBook())
+
+        if(add_info[1] == "movies"):
+            webScraper = Web(add_info[0])
+            parser = imdbParser(webScraper.imdbUrl())
+            parser.reduceSoup()
+            parser.initIMDBList()
+
+            if(self.final() == "{--replace--}"):
+                print(parser.printIMDBItem())
 
 class Main:
     def __init__(self):
