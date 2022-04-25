@@ -8,6 +8,7 @@ from urllib import response
 from Web import *
 from bookParser import *
 from imdbParser import *
+from classification import *
 from video import *
 
 # Fix Python2/Python3 incompatibility
@@ -224,14 +225,21 @@ class Eliza:
         print(self.initial())
         add_info = []
 
+        classifier = keyword()
+
         while True:
             sent = input('> ')
+            if(len(add_info) == 0):
+                classifier.input = sent
+                word = classifier.compareInput()
+                if(word):
+                    add_info.append(word)
 
-            if "sad" in sent:
-                add_info.append("sad")
-
-            if "adventurous" in sent:
-                add_info.append("adventurous")
+            # if "sad" in sent:
+            #     add_info.append("sad")
+            #
+            # if "adventurous" in sent:
+            #     add_info.append("adventurous")
 
             if sent == "books":
                 add_info.append(sent)

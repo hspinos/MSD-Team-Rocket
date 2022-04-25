@@ -1,4 +1,4 @@
-initial: How do you do.  Please tell me your problem.
+initial: How do you do? Please tell me how you're feeling
 final: {--replace--}
 quit: bye
 quit: goodbye
@@ -18,6 +18,7 @@ pre: computers computer
 pre: were was
 pre: you're you are
 pre: im i'm i am
+pre: i'm im i am
 pre: same alike
 post: am are
 post: your my
@@ -31,8 +32,8 @@ post: i'm you are
 synon: belief feel think believe wish
 synon: family mother mom father dad sister brother wife children child
 synon: desire want need
-synon: sad unhappy depressed sick
-synon: happy elated glad better
+synon: sad unhappy depressed sick down
+synon: happy elated glad better great awesome
 synon: adventurous bold venturesome daredevil
 synon: cannot can't
 synon: everyone everybody nobody noone
@@ -149,9 +150,9 @@ key: i
   decomp: * i am * @sad *
     reasmb: I am sorry to hear that you are (3) . Can I provide some material to help you with your sadness?
   decomp: * i am * @happy *
-    reasmb: It's great that you are feeling (3) ? Can I provide some material to make you feel even better?
+    reasmb: It's great that you are feeling (3) ? Can I provide some material to keep that feeling going?
   decomp: * i am * @adventurous *
-    reasmb: I see your looking for an adventure. Can I provide some material to help you with your adventure?
+    reasmb: I see your looking for an adventure. Can I provide some material to inspire your next adventure?
   decomp: * i was *
     reasmb: goto was
   decomp: * i @belief * i *

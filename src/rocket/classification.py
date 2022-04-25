@@ -12,37 +12,42 @@ def synonyms(term):
     return [span.text for span in
             soup.findAll('a', {'class': 'css-1kg1yv8 eh475bn0'})]  # 'css-1gyuw4i eh475bn0' for less relevant synonyms
 
-
-# create the list's for each emotion include the word itself
-sad = ["sad"]
-sad += synonyms("sad")
-happy = ["happy"]
-happy += synonyms("happy")
-fear = ["fear"]
-fear += synonyms("fear")
-disgust = ["disgust"]
-disgust += synonyms("disgust")
-anger = ["anger"]
-anger += synonyms("anger")
-surprise = ["surprise"]
-surprise += synonyms("surprise")
-
-emotions = [sad, happy, fear, disgust, anger, surprise]
-
-
 class keyword:
 
-    def __init__(self, feeling):
-        self.feeling = feeling
+    def __init__(self):
+        self.input = ""
+        # create the list's for each emotion include the word itself
+        self.sad = ["sad"]
+        self.sad += synonyms("sad")
+        self.happy = ["happy"]
+        self.happy += synonyms("happy")
+        self.fear = ["fear"]
+        self.fear += synonyms("fear")
+        self.disgust = ["disgust"]
+        self.disgust += synonyms("disgust")
+        self.anger = ["anger"]
+        self.anger += synonyms("anger")
+        self.surprise = ["surprise"]
+        self.surprise += synonyms("surprise")
+        self.adventurous = ["adventurous"]
+
+        self.emotions = [self.sad, self.happy, self.fear, self.disgust, self.anger, self.surprise, self.adventurous]
 
     def compareInput(self):
-        for i in emotions:
-            for n in i:
-                if self.feeling in n:
-                    print("found " + n)
-                    return str(n)
+        if(len(self.input) > 0):
+            inputUse = self.input.split()
+            for word in inputUse:
+                for emotion in self.emotions:
+                    for synonym in emotion:
+                        if word in synonym:
+                            return str(emotion[0])
 
 
-answer = input("how are you feeling ")
-k = keyword(answer)
-print(k.compareInput())
+
+
+
+
+
+# answer = input("how are you feeling ")
+# k = keyword(answer)
+# print(k.compareInput())
