@@ -1,0 +1,58 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.4, pytest-7.0.1, pluggy-1.0.0
+rootdir: C:\Users\Hayden\Desktop\MSD-Team-Rocket, configfile: pyproject.toml, testpaths: test
+plugins: anyio-3.5.0, cov-3.0.0, mock-3.7.0
+collected 6 items
+
+test\test_BookParser.py ...                                              [ 50%]
+test\test_Web.py F.F                                                     [100%]
+
+================================== FAILURES ===================================
+________________________ test_CorrectKeywordAssignment ________________________
+
+webScraperFixtureCorrect = <rocket.Web.Web object at 0x000001C3A488C280>
+
+    def test_CorrectKeywordAssignment(webScraperFixtureCorrect):
+>       assert webScraperFixtureCorrect.keyword == "Love"
+E       AssertionError: assert 'love' == 'Love'
+E         - Love
+E         ? ^
+E         + love
+E         ? ^
+
+test\test_Web.py:4: AssertionError
+__________________ test_bookUrlThrowsErrorOnIncorrectKeyword __________________
+
+webScraperFixtureIncorrect = <rocket.Web.Web object at 0x000001C3A563BBB0>
+capsys = <_pytest.capture.CaptureFixture object at 0x000001C3A563BCA0>
+
+    def test_bookUrlThrowsErrorOnIncorrectKeyword(webScraperFixtureIncorrect, capsys):
+        webScraperFixtureIncorrect.bookUrl()
+        captured = capsys.readouterr()
+>       assert captured.out == "'Wrong'\n"
+E       assert "'wrong'\n" == "'Wrong'\n"
+E         - 'Wrong'
+E         ?  ^
+E         + 'wrong'
+E         ?  ^
+
+test\test_Web.py:12: AssertionError
+
+---------- coverage: platform win32, python 3.10.4-final-0 -----------
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+src\rocket\Web.py                 26      8    69%
+src\rocket\__init__.py             0      0   100%
+src\rocket\bookParser.py          30      4    87%
+src\rocket\classification.py      34     34     0%
+src\rocket\demo.py                 6      6     0%
+src\rocket\eliza_Rocket.py       238    238     0%
+src\rocket\imdbParser.py          32     32     0%
+src\rocket\video.py               30     30     0%
+--------------------------------------------------
+TOTAL                            396    352    11%
+
+=========================== short test summary info ===========================
+FAILED test/test_Web.py::test_CorrectKeywordAssignment - AssertionError: asse...
+FAILED test/test_Web.py::test_bookUrlThrowsErrorOnIncorrectKeyword - assert "...
+========================= 2 failed, 4 passed in 2.65s =========================
