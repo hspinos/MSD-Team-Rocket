@@ -29,8 +29,9 @@ class keyword:
         self.anger += synonyms("anger")
         self.surprise = ["surprise"]
         self.surprise += synonyms("surprise")
+        self.adventurous = ["adventurous"]
 
-        self.emotions = [self.sad, self.happy, self.fear, self.disgust, self.anger, self.surprise]
+        self.emotions = [self.sad, self.happy, self.fear, self.disgust, self.anger, self.surprise, self.adventurous]
 
     def compareInput(self):
         if(len(self.input) > 0):
