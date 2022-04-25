@@ -10,6 +10,8 @@ from bookParser import *
 from imdbParser import *
 from classification import *
 from video import *
+from gui import *
+from tkinter import *
 
 # Fix Python2/Python3 incompatibility
 try: input = input
@@ -226,36 +228,42 @@ class Eliza:
         add_info = []
 
         classifier = keyword()
+        gui = Gui()
+
 
         while True:
-            sent = input('> ')
-            if(len(add_info) == 0):
-                classifier.input = sent
-                word = classifier.compareInput()
-                if(word):
-                    add_info.append(word)
+            gui.window.mainloop()
+            print(str(gui.inputSent))
+            if gui.inputSent:
+                sent = gui.userInput
+                print(sent)
+                if(len(add_info) == 0):
+                    classifier.input = sent
+                    word = classifier.compareInput()
+                    if(word):
+                        add_info.append(word)
 
-            # if "sad" in sent:
-            #     add_info.append("sad")
-            #
-            # if "adventurous" in sent:
-            #     add_info.append("adventurous")
+                # if "sad" in sent:
+                #     add_info.append("sad")
+                #
+                # if "adventurous" in sent:
+                #     add_info.append("adventurous")
 
-            if sent == "books":
-                add_info.append(sent)
+                if sent == "books":
+                    add_info.append(sent)
 
-            if sent == "videos":
-                add_info.append(sent)
+                if sent == "videos":
+                    add_info.append(sent)
 
-            if sent == "movies":
-                add_info.append(sent)
-                    
-            output = self.respond(sent)
+                if sent == "movies":
+                    add_info.append(sent)
 
-            if output is None or sent.lower() == "movies" or sent.lower() == "videos" or sent.lower() == "books":
-                break
+                gui.elizaSays = self.respond(sent)
 
-            print(output)
+                if gui.elizaSays is None or sent.lower() == "movies" or sent.lower() == "videos" or sent.lower() == "books":
+                    break
+
+                gui.sendEliza()
 
         if (add_info[1] == "books"):
             webScraper = Web(add_info[0])
@@ -287,6 +295,7 @@ class Main:
         eliza = Eliza()
         eliza.load(filename)
         eliza.run()
+
 
 if __name__ == '__main__':
     logging.basicConfig()
