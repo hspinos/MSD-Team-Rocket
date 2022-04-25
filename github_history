@@ -1,0 +1,344 @@
+commit efcbe4a96ef26c7430e9d811bac7a9abeb9e5594
+Author: hspinos <hspinos@gmail.com>
+Date:   Tue Apr 19 01:06:27 2022 -0400
+
+    added imdbParser
+
+commit e418d3960c5b3947a3074dd16b5af8c2f663e363
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Mon Apr 18 18:56:55 2022 -0400
+
+    Video class added
+
+commit b2a42e7d92ddd93c2318703f4b5bdab3de06ecea
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Mon Apr 11 20:59:01 2022 -0400
+
+    finally got her to work BBBBBAAAAABBBBYYYYYY
+
+commit c67713405e9ffb6e7f77d3d80ebf3bcd3b90ef1d
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Mon Apr 11 19:39:37 2022 -0400
+
+    Eliza add on
+
+commit 89fe9020465a321cf3c6a0d5e28d9042805fb892
+Author: joseph5932 <jb54944@georgiasouthern.edu>
+Date:   Tue Apr 12 11:05:22 2022 -0400
+
+    GUI
+
+commit 38c5e68e11e17269b14f6b212b14174b9f53c420
+Merge: 6cf80e3 d0c2c6d
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Sun Apr 10 22:18:20 2022 -0400
+
+    Merge pull request #8 from hspinos/hspinos
+    
+    Create gui.txt
+
+commit d0c2c6d592e6c412ed952b26fb96338050704149
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Apr 10 22:17:37 2022 -0400
+
+    Create gui.txt
+
+commit 6cf80e3d5e94a11595f176f18df9d6171c45cd44
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Apr 10 01:32:07 2022 -0400
+
+    Created bookParser and Web unit tests
+
+commit fe71e4a64906ba82ffd44989b59c0baabbdb93bb
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Tue Mar 15 18:02:34 2022 -0400
+
+    Team Rocket Stamp
+
+commit c01c11d73795f787a80b44eeb5dd25877bf3b6be
+Merge: 9c8194c 35d81ad
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Tue Mar 15 16:04:24 2022 -0400
+
+    Well need Team Rocket Stamp
+
+commit 9c8194c83501260b44036c236370a6c88e0fb1f1
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Tue Mar 15 15:58:59 2022 -0400
+
+    Well needed Team Rocket Stamp
+
+commit 35d81ad735925442a92bbdd264e4b0376b3d5d50
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:45:59 2022 -0500
+
+    Added badge
+
+commit 65da8f3e3af248438ed455139f3a3f8f8fbfb15b
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:42:08 2022 -0500
+
+    Update bookParser.py
+
+commit 08a69a54991ca70e8fea8a0d11f8496ced38cc24
+Merge: 6ad3b3a 8a60c48
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:39:43 2022 -0500
+
+    Merge branch 'main' of https://github.com/hspinos/MSD-Team-Rocket
+
+commit 6ad3b3a0d354eed27d0d1c3389cbdb58a8ccad54
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:39:28 2022 -0500
+
+    Fix merger conflicts
+
+commit 8a60c4805d86cc1876161aa394dde1f72ae10c22
+Merge: e5e98ff 568e55e
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Sun Mar 6 22:30:44 2022 -0500
+
+    Merge pull request #7 from hspinos/automatedTesting
+    
+    Automated testing
+
+commit 568e55e4156ae8c6d7f1b240562ddf78478c4b96
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:09:44 2022 -0500
+
+    Update tests.yml
+
+commit fe23deab9f47daefc8ac6dc61b0d2782e4e3a09e
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:07:13 2022 -0500
+
+    Update tests.yml
+
+commit 378a166d419f395909cecedfe52be7b077e531d7
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:02:59 2022 -0500
+
+    Update tests.yml
+
+commit 7cff800160f74c89497bb321abb40ef76c98419c
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 22:02:09 2022 -0500
+
+    setup automated testing
+
+commit e5e98ff34673f34bf2a67a01a4ea36e62ba59fb2
+Merge: 493ee56 274f5ac
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Sun Mar 6 22:11:53 2022 -0500
+
+    Revision
+
+commit 493ee56fbf8e4412ce5d591d432a28b370e10444
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Sun Mar 6 22:08:41 2022 -0500
+
+    Revision
+
+commit 274f5acbfc64a0110d5ff5f5dd85f613d5d3ce0f
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 20:25:59 2022 -0500
+
+    fixed naming conventions on test files
+
+commit aaab560a58f7cba3bf5f2c599253883ce5118502
+Author: hspinos <hspinos@gmail.com>
+Date:   Sun Mar 6 20:09:08 2022 -0500
+
+    removed unused dependency
+
+commit 16090c509389457589fd34ae8155efe5dff58691
+Author: hspinos <hspinos@gmail.com>
+Date:   Thu Mar 3 12:10:52 2022 -0500
+
+    update demo and web
+
+commit 0c135c8f8bfccae9fa04a329dde4c7e86051aa24
+Author: hspinos <hspinos@gmail.com>
+Date:   Tue Mar 1 11:10:18 2022 -0500
+
+    Created Demo and Undated Dir
+    
+    Created a demo file to replace main where we can write code to be demo'ed in standup meeting. Also added src and test directories for further implementation of unit testing
+
+commit ac7947b8e343825463097648d3b44ef5159f7c50
+Merge: 00f2667 bfcf850
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Tue Feb 22 12:38:05 2022 -0500
+
+    Merge pull request #5 from hspinos/fixingGit
+    
+    Create classification.py
+
+commit bfcf850eb7739e48ea85a03cb9b8fa767349c6a7
+Author: hspinos <hspinos@gmail.com>
+Date:   Tue Feb 22 12:37:40 2022 -0500
+
+    Create classification.py
+
+commit 00f26670067009daef173dea188d68b62c5123c1
+Author: hspinos <hspinos@gmail.com>
+Date:   Tue Feb 22 12:35:08 2022 -0500
+
+    layout skelton of mian
+
+commit d6f36a48571124a00fea52f41ca151fe39e7d3d9
+Author: carlycasey <carlycasey2@gmail.com>
+Date:   Tue Feb 22 11:46:56 2022 -0500
+
+    updated readme
+
+commit 2396969f506d43f9e58350a44a92dd17446e7bfc
+Author: carlycasey <carlycasey2@gmail.com>
+Date:   Tue Feb 22 11:43:10 2022 -0500
+
+    updated readme
+
+commit c899e5d12f53219a7e6f4ef6178aeb56d5d9f886
+Author: hspinos <hspinos@gmail.com>
+Date:   Mon Feb 21 22:22:17 2022 -0500
+
+    Began work on movie parser
+
+commit 4880289ae28cabe9b77dd569415e0da3c4ec27d5
+Merge: 02fe54c 21f5e84
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Sun Feb 20 10:27:48 2022 -0500
+
+    Revised
+
+commit 02fe54cb374aa615474d17a17154e7ca3cd8fe0b
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Sun Feb 20 10:24:56 2022 -0500
+
+    Revised
+
+commit 21f5e84f4d66d83a84d59b2a58e43a399293c6c8
+Merge: d0650a0 deb564c
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Sat Feb 19 13:11:02 2022 -0500
+
+    Merge pull request #3 from hspinos/hspinos/bookParsing
+    
+    Update main w links
+
+commit deb564c0bbf6e967f00d3789d062a4980cf05891
+Author: hspinos <hspinos@gmail.com>
+Date:   Sat Feb 19 13:08:29 2022 -0500
+
+    Update main w links
+
+commit d0650a07ea69ad6ada82be675922c5cc94c961d5
+Merge: 1e0dba9 658a329
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Sat Feb 19 00:40:18 2022 -0500
+
+    Merge pull request #2 from hspinos/hspinos/bookParsing
+    
+    Hspinos/book parsing
+
+commit 658a32999e616c936a6ce3882dfd6b176f169d90
+Author: hspinos <hspinos@gmail.com>
+Date:   Sat Feb 19 00:39:38 2022 -0500
+
+    commit pycache change
+
+commit 9b2ac104a204686f70cf789c93a273339cb50149
+Author: hspinos <hspinos@gmail.com>
+Date:   Sat Feb 19 00:37:27 2022 -0500
+
+    Delete demofile2.txt
+
+commit f206bb2c0b9e2b4ca034f5c56a120681e832f9ea
+Author: hspinos <hspinos@gmail.com>
+Date:   Sat Feb 19 00:36:43 2022 -0500
+
+    Successful book parse
+
+commit 09a73ccaa80373433f89ee5d904881bf65c7d070
+Author: hspinos <hspinos@gmail.com>
+Date:   Fri Feb 18 17:21:01 2022 -0500
+
+    Created parsing code.
+    
+    Needs to be tested. Having trouble with pip installing packages to correct location
+
+commit 1e0dba9d00d3986a643ac4974b0d2f4de0263439
+Merge: 6a3205d a6abde5
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Thu Feb 17 11:46:20 2022 -0500
+
+    Merge pull request #1 from hspinos/hspinos/parser
+    
+    Hspinos/parser
+
+commit 6a3205da34926440d7351ad87453a21959f01240
+Merge: 55b382f 4f79a2f
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Wed Feb 16 20:19:18 2022 -0500
+
+    Revised
+
+commit a6abde5f6bd007fedb54ea6265cc71d96906e5c4
+Author: hspinos <hspinos@gmail.com>
+Date:   Wed Feb 16 20:17:57 2022 -0500
+
+    Added comments
+
+commit 55b382f7371fc1330c4dcf49391b4be2bf4e08ae
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Wed Feb 16 20:16:39 2022 -0500
+
+    Revised
+
+commit dd52cbc6407c28592e23e10cb5b3f1e3ffed6d66
+Author: hspinos <hspinos@gmail.com>
+Date:   Wed Feb 16 19:14:30 2022 -0500
+
+    Created base structure for book parser
+
+commit 4f79a2ffe660fe4d8a015637c707cc39308499d5
+Author: Anthony Pierce <Ant.pierce24@gmail.com>
+Date:   Tue Feb 15 13:18:06 2022 -0500
+
+    Delete .google-cookie
+
+commit 5c9530a2a191fd65056d478138a29d7d0c732678
+Author: Anthony Pierce <ant.pierce24@gmail.com>
+Date:   Tue Feb 8 17:39:40 2022 -0500
+
+    Web scraper class
+
+commit 42cbeb15fadacc88c460a64d1721bc9b3b34554e
+Author: hspinos <hspinos@gmail.com>
+Date:   Tue Jan 25 15:35:14 2022 -0500
+
+    remove test file
+
+commit 0ee5d20dd6190edb54dc5e31a1604f1cd1567f4e
+Author: hspinos <hspinos@gmail.com>
+Date:   Tue Jan 25 15:34:01 2022 -0500
+
+    hayden test
+
+commit dc257693cb030ff06e4342295d721b9094db6e8f
+Author: Carly Casey <carlycasey@Carlys-MacBook-Air.local>
+Date:   Tue Jan 25 12:39:39 2022 -0500
+
+    hello
+
+commit 4167b7c0c6856e3c6bc9929dfb6f7615ce5494b6
+Author: eh04987 <eh04987@georgiasouthern.edu>
+Date:   Tue Jan 25 12:28:32 2022 -0500
+
+    testing
+
+commit e552b01dd1b3dc6153c439699fc3099c9c3379df
+Author: hspinos <71044178+hspinos@users.noreply.github.com>
+Date:   Thu Jan 20 11:06:06 2022 -0500
+
+    Initial commit
