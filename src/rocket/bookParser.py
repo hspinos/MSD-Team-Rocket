@@ -28,7 +28,7 @@ class bookParser:
                 self.table.add_row([i.title, i.author, i.price])
             else:
                 self.table.add_row([i.title, i.author, i.price])
-        print(self.table)
+        return(self.table)
 
 class Book:
 

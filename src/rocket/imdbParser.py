@@ -26,7 +26,7 @@ class imdbParser:
     def printIMDBItem(self):
         for i in self.imdbList:
             self.table.add_row([i.title, i.rating, i.description])
-        print(self.table)
+        return(self.table)
 
 class IMDBItem:
 
