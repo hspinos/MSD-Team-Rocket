@@ -275,31 +275,18 @@ class Eliza:
         return random.choice(self.finals)
 
     def run(self):
-        #print(self.initial())
-        #add_info = []
 
         classifier = keyword()
-        #gui = Gui()
 
-
-        #while self.inputSent:
-            #gui.window.mainloop()
-            #print(str(gui.inputSent))
         self.getInput()
+
         if self.inputSent:
             sent = self.userInput
-            #print(sent)
             if(len(self.add_info) == 0):
                 classifier.input = sent
                 word = classifier.compareInput()
                 if(word):
                     self.add_info.append(word)
-
-            # if "sad" in sent:
-            #     add_info.append("sad")
-            #
-            # if "adventurous" in sent:
-            #     add_info.append("adventurous")
 
             if sent.lower() == "books":
                 self.add_info.append(sent)
@@ -313,8 +300,6 @@ class Eliza:
 
             self.elizaSays = self.respond(sent)
 
-            #if output is None or sent.lower() == "movies" or sent.lower() == "videos" or sent.lower() == "books":
-            #    break
             if (len(self.add_info) < 2):
                 self.sendEliza()
 
@@ -355,7 +340,6 @@ class Main:
         eliza.elizaSays = eliza.initial()
         eliza.textBox.insert("1.0", "Eliza: " + str(eliza.elizaSays) + "\n")
         eliza.window.mainloop()
-        #eliza.run()
 
 
 
