@@ -12,6 +12,7 @@ from classification import *
 from video import *
 from gui import *
 from tkinter import *
+from prettytable import PrettyTable
 
 # Fix Python2/Python3 incompatibility
 try: input = input
@@ -47,6 +48,56 @@ class Eliza:
         self.keys = {}
         self.memory = []
         self.lookUpFile = filename
+
+        self.add_info = []
+
+        #define our window
+        self.window = Tk()
+        self.window.title("ElizRex")
+        self.window.geometry("1920x1080")
+
+        self.inputSent = False
+        self.userInput = ""
+
+        #define text box
+        self.textBox = Text(self.window, height = 50, width=250)
+        #self.textBox.bind("<Key>", self.update_size)
+
+
+        #Start text from eliza
+        self.elizaSays = ""
+
+        #User typing
+        self.textBox.insert("2.0", "You: ")
+
+        self.textBox.pack()
+        # create send button
+        Button(self.window, text="Send", width=20, command=self.run).pack(pady=20)
+
+    def getInput(self):
+        pos = self.textBox.index("end-1l+5c")
+        self.userInput = self.textBox.get(pos, "end-1c")
+        print(str(self.userInput))
+        self.textBox.insert(END, "\n")
+        self.inputSent = True
+
+    def sendEliza(self):
+        self.textBox.insert(END, "Eliza: " + self.elizaSays + "\n")
+        self.textBox.insert(END, "You: ")
+        self.inputSent = False
+
+    def sendResults(self):
+        self.textBox.insert(END, "Eliza: \n" + self.elizaSays + "\n")
+        #self.textBox.insert(END, "You: ")
+        self.inputSent = False
+
+    def update_size(self, event):
+        widget_width = 0
+        widget_height = float(event.widget.index(END))
+        for line in event.widget.get("1.0", END).split("\n"):
+            if len(line) > widget_width:
+                widget_width = len(line)+1
+        event.widget.config(width=widget_width, height=widget_height)
 
     def load(self, path):
         key = None
@@ -224,77 +275,88 @@ class Eliza:
         return random.choice(self.finals)
 
     def run(self):
-        print(self.initial())
-        add_info = []
+        #print(self.initial())
+        #add_info = []
 
         classifier = keyword()
-        gui = Gui()
+        #gui = Gui()
 
 
-        while True:
-            gui.window.mainloop()
-            print(str(gui.inputSent))
-            if gui.inputSent:
-                sent = gui.userInput
-                print(sent)
-                if(len(add_info) == 0):
-                    classifier.input = sent
-                    word = classifier.compareInput()
-                    if(word):
-                        add_info.append(word)
+        #while self.inputSent:
+            #gui.window.mainloop()
+            #print(str(gui.inputSent))
+        self.getInput()
+        if self.inputSent:
+            sent = self.userInput
+            #print(sent)
+            if(len(self.add_info) == 0):
+                classifier.input = sent
+                word = classifier.compareInput()
+                if(word):
+                    self.add_info.append(word)
 
-                # if "sad" in sent:
-                #     add_info.append("sad")
-                #
-                # if "adventurous" in sent:
-                #     add_info.append("adventurous")
+            # if "sad" in sent:
+            #     add_info.append("sad")
+            #
+            # if "adventurous" in sent:
+            #     add_info.append("adventurous")
 
-                if sent == "books":
-                    add_info.append(sent)
+            if sent.lower() == "books":
+                self.add_info.append(sent)
 
-                if sent == "videos":
-                    add_info.append(sent)
+            if sent.lower() == "videos":
+                self.add_info.append(sent)
 
-                if sent == "movies":
-                    add_info.append(sent)
+            if sent.lower() == "movies":
+                self.add_info.append(sent)
 
-                gui.elizaSays = self.respond(sent)
 
-                if gui.elizaSays is None or sent.lower() == "movies" or sent.lower() == "videos" or sent.lower() == "books":
-                    break
+            self.elizaSays = self.respond(sent)
 
-                gui.sendEliza()
+            #if output is None or sent.lower() == "movies" or sent.lower() == "videos" or sent.lower() == "books":
+            #    break
+            if (len(self.add_info) < 2):
+                self.sendEliza()
 
-        if (add_info[1] == "books"):
-            webScraper = Web(add_info[0])
-            parser = bookParser(webScraper.bookUrl())
-            parser.reduceSoup()
-            parser.initList()
-        
-            if(self.final() == "{--replace--}"):
-                print(parser.printBook())
-        
-        if(add_info[1] == "videos"):
-                vid = video(add_info[0])
-                vid.videoDisplay()
+        if (len(self.add_info) > 1):
+            if (self.add_info[1] == "books"):
+                webScraper = Web(self.add_info[0])
+                parser = bookParser(webScraper.bookUrl())
+                parser.reduceSoup()
+                parser.initList()
 
                 if(self.final() == "{--replace--}"):
+                    self.elizaSays = str(parser.printBook())
+                    self.sendResults()
                     print(parser.printBook())
 
-        if(add_info[1] == "movies"):
-            webScraper = Web(add_info[0])
-            parser = imdbParser(webScraper.imdbUrl())
-            parser.reduceSoup()
-            parser.initIMDBList()
+            if(self.add_info[1] == "videos"):
+                    vid = video(self.add_info[0])
+                    vid.videoDisplay()
 
-            if(self.final() == "{--replace--}"):
-                print(parser.printIMDBItem())
+                    if(self.final() == "{--replace--}"):
+                        print(parser.printBook())
+
+            if(self.add_info[1] == "movies"):
+                webScraper = Web(self.add_info[0])
+                parser = imdbParser(webScraper.imdbUrl())
+                parser.reduceSoup()
+                parser.initIMDBList()
+
+                if(self.final() == "{--replace--}"):
+                    self.elizaSays = str(parser.printIMDBItem())
+                    self.sendResults()
+                    print(parser.printIMDBItem())
 
 class Main:
     def __init__(self):
         eliza = Eliza()
         eliza.load(filename)
-        eliza.run()
+        eliza.elizaSays = eliza.initial()
+        eliza.textBox.insert("1.0", "Eliza: " + str(eliza.elizaSays) + "\n")
+        eliza.window.mainloop()
+        #eliza.run()
+
 
 
 if __name__ == '__main__':
